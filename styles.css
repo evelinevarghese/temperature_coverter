@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgb(21, 83, 146) 38%); 
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  @keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+  .mobile {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  .temperature-converter {
+    background: #ffffff83;
+    border-radius: 5px; border: #f3f5f7;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 25px 45px;
+    min-width: 320px;
+    width: 100%;
+    height: auto; 
+    box-shadow: -5px -5px 250px 0px rgba(255, 255, 255, 0.02) inset;
+    backdrop-filter: blur(21px); border-color: #fbfcfd;
+  }
+  .temp-field {
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  /* Style the label for the temperature field */
+  .temp-field label {
+    display: block;
+    margin-bottom: 8px; /* Adjust as needed */
+  }
+  
+  /* Style the select dropdown for temperature types */
+  .temp-field select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Style the options within the select dropdown */
+  .temp-field select option {
+    padding: 10px;
+  }
+  
+  /* Add some styling for better user experience on hover and focus */
+  .temp-field select:hover,
+  .temp-field select:focus {
+    background:  #150072;  
+    color: #ffffff;  transition: all 0.3s ease-in;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.15), inset 0 -10px rgba(0, 0, 0, 0.1);
+  }
+  .temp-field select option {
+    text-align: left;
+    cursor: pointer;
+    background:  #150072; /* Blue background on hover */
+    color: #ffffff; /* White text color on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.15), inset 0 -10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff; /* Background color */
+    color:  #150072; /* Text color */
+  }
+  
+  /* Change color on hover */
+  .temp-field select option:hover {
+    background-color: #000000;
+    color: #ffffff;
+
+  }  
+
+
+  .title {
+    color: #222;
+    font-size: 1.5rem;
+    text-align: center;
+
+  }
+  .result {
+    text-align: center;
+    margin: 20px 0;
+
+  }
+  .result-heading {
+    color: #555;
+    font-size: 1rem;
+    font-weight: 600;
+    
+  }
+  .celsius-value {
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    transition: all .45s ease;
+  }
+  label {
+    color: #242323;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  input,
+  select {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+  input:focus {
+    border: 1px solid #4c49f3;
+  }
+  .degree-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  .degree-field {
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+  }
+  
+  #convert-btn {
+    background: transparent;
+    border: 2px solid #150072; /* Blue border */
+    color: #150072; /* Blue text color */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 10px 30px; /* Adjust padding as needed */
+    transition: all 0.3s ease-in;
+  }
+  #convert-btn:hover {
+    background:  #150072; /* Blue background on hover */
+    color: #ffffff; /* White text color on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.15), inset 0 -10px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  
+  
+  .fa {
+    margin-left: -12px;
+    margin-right: 8px;
+  }
+  
+  .loading {
+    display: none;
+  }
