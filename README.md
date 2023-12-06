@@ -1,4 +1,4 @@
-emperature Converter
+Temperature Converter
 A basic temperature converter web application built with HTML, CSS, and JavaScript.
 
 Features
